@@ -9,19 +9,22 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadPrime : SwarmSummonBase
     {
-        public OverloadPrime() : base(NPCID.SkeletronPrime, "A sickly chill envelops the world!", 25, "MechSkull")
+        public OverloadPrime() : base("Primal Control Chip", "Skeletron Prime", NPCID.SkeletronPrime, "A sickly chill envelops the world!", "MechSkull")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Primal Control Chip");
-            Tooltip.SetDefault("Summons several Skeletron Primes\nOnly Treasure Bags will be dropped");
+            FargoGlobalNPC.SwarmHpMultiplier = 10;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 25;
+            FargoGlobalNPC.SwarmBagId = ItemID.SkeletronPrimeBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.SkeletronPrimeTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerPrime>();
         }
 
         public override bool CanUseItem(Player player)
         {
-            return !Fargowiltas.SwarmActive && !Main.dayTime;
+            return !FargoWorld.SwarmActive && !Main.dayTime;
         }
     }
 }

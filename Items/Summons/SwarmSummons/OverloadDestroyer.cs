@@ -9,19 +9,22 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadDestroyer : SwarmSummonBase
     {
-        public OverloadDestroyer() : base(NPCID.TheDestroyer, "The planet trembles from the core!", 10, "MechWorm")
+        public OverloadDestroyer() : base("Seismic Actuator", "Destroyer", NPCID.TheDestroyer, "The planet trembles from the core!", "MechWorm")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Seismic Actuator");
-            Tooltip.SetDefault("Summons several Destroyers\nOnly Treasure Bags will be dropped");
+            FargoGlobalNPC.SwarmHpMultiplier = 10;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 10;
+            FargoGlobalNPC.SwarmBagId = ItemID.DestroyerBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.DestroyerTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerDestroy>();
         }
 
         public override bool CanUseItem(Player player)
         {
-            return !Fargowiltas.SwarmActive && !Main.dayTime;
+            return !FargoWorld.SwarmActive && !Main.dayTime;
         }
     }
 }

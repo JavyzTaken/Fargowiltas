@@ -1,6 +1,58 @@
 This is a Quality of life mod that adds the Mutant town NPC who sells boss summons of nearly every mod
 There are several other items such as infinite ammos, craftable instant builds for common world infrastructure like skybridges, obsidian underworld bridges, hellevators, unlimited potions, increased spawn rates toggle item, and more!
 
+
+
+Reworked swarms:
+-now only conumes one item, not the whole stack
+-Spawns one huge buffed boss. hp x10, damage x2, defense x2, moves/acts at half speed, spawns mini version of itself every 20% hp and at the start
+-beating the swarm master drops 100 treasure bags, 10 trophies, and the energizer
+
+Only really added Queen Bee Swarm so far, all other swarms might work idk
+-Test it out, give initial thoughts
+-TRY IN MULTIPLAYER
+
+
+Fixed all loot dying 
+Fixed swarms in MP
+Implemented all swarms correctly
+Changed minions to spawn once per second instead of in big groups at HP thresholds
+minions are no longer counted as bosses and have reduced stats
+
+-Fixed some swarm summon tooltips, updated energizer tooltips
+-All spawned npcs and projectiles from swarm master or swarm minions such as extra minions/skele arms/projectiles from skele arms will also be scaled up or down
+-Reduced size of swarm master and minions a bit
+-Adjusted all swarm HPs to set their own multiplier instead of always 10x HP, some increased, some decreased
+-Fixed Twin swarm only having Retinazer
+-Fixed King and Queen Slime Swarm Master not being any bigger
+-Fixed Dungeon Guardian swarm dropping Skeletron swarm items
+-Fixed Deerclops being invincible if you got too far away
+-Lowered how high up initial bosses spawn
+-Fixed Destroyer swarm being just heads
+-All Moon Lords Cores will always be exposed
+-BoC Swarm master will always spawn his own creepers first
+
+
+-Fixed Deerclops and Golem swarm being dumb because they were all invincible most of the time
+-Fxed WoF swarm not doing anything
+-Fixed Skeletron swarm always spawning Dungeon Guardians
+-Fixed Eater Swarm, there is only 1 big Eater who will drop rewards when fully killed, World Feeders are his minion
+
+
+-Fixed Pink Slime Crown not having research value
+
+
+
+
+
+
+king and queen slime swarms fix scale, betsy, moon lord
+eater just doesnt work? make twins actually work, destroyer is death, golem is death
+scale up any spawned minions
+
+
+
+
 NEW UPDATE - V 2.8.3
 -Added crate recipe for Demon Conch
 -Added Empress bag recipe for Prismatic Dye

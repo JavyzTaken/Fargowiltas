@@ -1,3 +1,4 @@
+using Fargowiltas.Items.Summons.SwarmSummons.Energizers;
 using Fargowiltas.NPCs;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -9,19 +10,17 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadBee : SwarmSummonBase
     {
-        public OverloadBee() : base(NPCID.QueenBee, "A deafening buzz pierces through you!", 50, "Abeemination2")
+        public OverloadBee() : base("Overstuffed Larva", "Queen Bee", NPCID.QueenBee, "A deafening buzz pierces through you!", "Abeemination2")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Overstuffed Larva");
-            Tooltip.SetDefault("Summons several Queen Bees\nOnly Treasure Bags will be dropped");
-        }
-
-        public override bool CanUseItem(Player player)
-        {
-            return !Fargowiltas.SwarmActive;
+            FargoGlobalNPC.SwarmHpMultiplier = 20;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 25;
+            FargoGlobalNPC.SwarmBagId = ItemID.QueenBeeBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.QueenBeeTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<EnergizerBee>();
         }
     }
 }

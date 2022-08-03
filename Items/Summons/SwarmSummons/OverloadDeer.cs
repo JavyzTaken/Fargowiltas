@@ -9,19 +9,17 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadDeer : SwarmSummonBase
     {
-        public OverloadDeer() : base(NPCID.Deerclops, "The Constant takes over!", 50, "DeerThing2")
+        public OverloadDeer() : base("Deer Amalgamation", "Deerclops", NPCID.Deerclops, "The Constant takes over!", "DeerThing2")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Deer Amalgamation");
-            Tooltip.SetDefault("Summons several Deerclops\nOnly Treasure Bags will be dropped");
-        }
-
-        public override bool CanUseItem(Player player)
-        {
-            return !Fargowiltas.SwarmActive;
+            FargoGlobalNPC.SwarmHpMultiplier = 10;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 25;
+            FargoGlobalNPC.SwarmBagId = ItemID.DeerclopsBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.DeerclopsTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerDeer>();
         }
     }
 }

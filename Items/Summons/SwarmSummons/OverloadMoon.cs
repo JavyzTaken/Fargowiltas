@@ -9,19 +9,17 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadMoon : SwarmSummonBase
     {
-        public OverloadMoon() : base(NPCID.MoonLordCore, "The wind whispers of death's approach!", 20, "CelestialSigil2")
+        public OverloadMoon() : base("Runic Inscription", "Moon Lord", NPCID.MoonLordCore, "The wind whispers of death's approach!", "CelestialSigil2")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Runic Inscription");
-            Tooltip.SetDefault("Summons several Moon Lords\nOnly Treasure Bags will be dropped");
-        }
-
-        public override bool CanUseItem(Player player)
-        {
-            return !Fargowiltas.SwarmActive;
+            FargoGlobalNPC.SwarmHpMultiplier = 10;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 20;
+            FargoGlobalNPC.SwarmBagId = ItemID.MoonLordBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.MoonLordTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerMoon>();
         }
     }
 }

@@ -9,19 +9,17 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadSlimeCrown : SwarmSummonBase
     {
-        public OverloadSlimeCrown() : base(NPCID.KingSlime, "Welcome to the true slime rain!", 50, "SlimyCrown")
+        public OverloadSlimeCrown() : base("Swarm Crown", "King Slime", NPCID.KingSlime, "Welcome to the true slime rain!", "SlimyCrown")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Swarm Crown");
-            Tooltip.SetDefault("Summons several King Slimes\nOnly Treasure Bags will be dropped");
-        }
-
-        public override bool CanUseItem(Player player)
-        {
-            return !Fargowiltas.SwarmActive;
+            FargoGlobalNPC.SwarmHpMultiplier = 50;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 25;
+            FargoGlobalNPC.SwarmBagId = ItemID.KingSlimeBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.KingSlimeTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerSlime>();
         }
     }
 }

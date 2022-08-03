@@ -9,19 +9,17 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadPlant : SwarmSummonBase
     {
-        public OverloadPlant() : base(NPCID.Plantera, "The jungle beats as one!", 25, "PlanterasFruit")
+        public OverloadPlant() : base("Heart of the Jungle", "Plantera", NPCID.Plantera, "The jungle beats as one!", "PlanterasFruit")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Heart of the Jungle");
-            Tooltip.SetDefault("Summons several Planteras\nOnly Treasure Bags will be dropped");
-        }
-
-        public override bool CanUseItem(Player player)
-        {
-            return !Fargowiltas.SwarmActive;
+            FargoGlobalNPC.SwarmHpMultiplier = 10;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 25;
+            FargoGlobalNPC.SwarmBagId = ItemID.PlanteraBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.PlanteraTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerPlant>();
         }
     }
 }

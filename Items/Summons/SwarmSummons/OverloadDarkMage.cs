@@ -9,19 +9,17 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadDarkMage : SwarmSummonBase
     {
-        public OverloadDarkMage() : base(NPCID.DD2DarkMageT1, "You feel like you're in a library!", 50, "ForbiddenTome")
+        public OverloadDarkMage() : base("Really Forbidden Tome", "Dark Mage", NPCID.DD2DarkMageT1, "You feel like you're in a library!", "ForbiddenTome")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Really Forbidden Tome");
-            Tooltip.SetDefault("Summons several Dark Mages\nOnly Treasure Bags will be dropped");
-        }
-
-        public override bool CanUseItem(Player player)
-        {
-            return !Fargowiltas.SwarmActive;
+            FargoGlobalNPC.SwarmHpMultiplier = 50;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 20;
+            FargoGlobalNPC.SwarmBagId = ItemID.BossBagDarkMage;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.BossTrophyDarkmage;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerDarkMage>();
         }
     }
 }

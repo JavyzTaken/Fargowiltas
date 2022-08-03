@@ -9,19 +9,17 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadBrain : SwarmSummonBase
     {
-        public OverloadBrain() : base(NPCID.BrainofCthulhu, "You feel dumb among so many brains!", 25, "GoreySpine")
+        public OverloadBrain() : base("Brain Storm", "Brain of Cthulhu", NPCID.BrainofCthulhu, "You feel dumb among so many brains!", "GoreySpine")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Brain Storm");
-            Tooltip.SetDefault("Summons several Brains of Cthulhu\nOnly Treasure Bags will be dropped");
-        }
-
-        public override bool CanUseItem(Player player)
-        {
-            return !Fargowiltas.SwarmActive;
+            FargoGlobalNPC.SwarmHpMultiplier = 25;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 25;
+            FargoGlobalNPC.SwarmBagId = ItemID.BrainOfCthulhuBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.BrainofCthulhuTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerBrain>();
         }
     }
 }

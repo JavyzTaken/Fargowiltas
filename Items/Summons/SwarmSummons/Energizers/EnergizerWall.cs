@@ -7,7 +7,7 @@ namespace Fargowiltas.Items.Summons.SwarmSummons.Energizers
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Wally Energizer");
-            Tooltip.SetDefault("Formed after using 10 Bundle of Dolls\n'You feel claustrophobic'");
+            Tooltip.SetDefault("Reward of the Bundle of Dolls\n'You feel claustrophobic'");
         }
 
         public override void SetDefaults()

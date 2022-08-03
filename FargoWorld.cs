@@ -20,6 +20,12 @@ namespace Fargowiltas
         internal static int AbomClearCD;
         internal static int WoodChopped;
 
+        // Swarms
+        internal static bool SwarmActive;
+        //internal static int SwarmKills;
+        //internal static int SwarmTotal;
+        //internal static int SwarmSpawned;
+
         internal static bool OverloadGoblins;
         internal static bool OverloadPirates;
         internal static bool OverloadPumpkinMoon;
@@ -165,7 +171,7 @@ namespace Fargowiltas
             AbomClearCD = reader.ReadInt32();
             WoodChopped = reader.ReadInt32();
             Matsuri = reader.ReadBoolean();
-            Fargowiltas.SwarmActive = reader.ReadBoolean();
+            SwarmActive = reader.ReadBoolean();
         }
 
         public override void NetSend(BinaryWriter writer)
@@ -178,7 +184,7 @@ namespace Fargowiltas
             writer.Write(AbomClearCD);
             writer.Write(WoodChopped);
             writer.Write(Matsuri);
-            writer.Write(Fargowiltas.SwarmActive);
+            writer.Write(SwarmActive);
         }
 
         public override void PostUpdateWorld()
@@ -201,10 +207,10 @@ namespace Fargowiltas
 
 
             // swarm reset in case something goes wrong
-            if (Main.netMode != NetmodeID.MultiplayerClient && Fargowiltas.SwarmActive
+            if (Main.netMode != NetmodeID.MultiplayerClient && SwarmActive
                 && NoBosses() && !NPC.AnyNPCs(NPCID.EaterofWorldsHead) && !NPC.AnyNPCs(NPCID.DungeonGuardian) && !NPC.AnyNPCs(NPCID.DD2DarkMageT1))
             {
-                Fargowiltas.SwarmActive = false;
+                SwarmActive = false;
                 FargoGlobalNPC.LastWoFIndex = -1;
                 FargoGlobalNPC.WoFDirection = 0;
                 if (Main.netMode == NetmodeID.Server)

@@ -175,7 +175,7 @@ namespace Fargowiltas
 
         public override void PostUpdateEquips()
         {
-            if (Fargowiltas.SwarmActive)
+            if (FargoWorld.SwarmActive)
             {
                 Player.buffImmune[BuffID.Horrified] = true;
             }

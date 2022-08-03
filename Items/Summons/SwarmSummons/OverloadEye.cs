@@ -9,19 +9,22 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadEye : SwarmSummonBase
     {
-        public OverloadEye() : base(NPCID.EyeofCthulhu, "Countless eyes pierce the veil staring in your direction!", 50, "SuspiciousEye")
+        public OverloadEye() : base("Eyemalgamation", "Eye of Cthulhu", NPCID.EyeofCthulhu, "Countless eyes pierce the veil staring in your direction!", "SuspiciousEye")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Eyemalgamation");
-            Tooltip.SetDefault("Summons several Eyes of Cthulhu\nOnly Treasure Bags will be dropped");
+            FargoGlobalNPC.SwarmHpMultiplier = 50;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 25;
+            FargoGlobalNPC.SwarmBagId = ItemID.EyeOfCthulhuBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.EyeofCthulhuTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerEye>();
         }
 
         public override bool CanUseItem(Player player)
         {
-            return !Fargowiltas.SwarmActive && !Main.dayTime;
+            return !FargoWorld.SwarmActive && !Main.dayTime;
         }
     }
 }

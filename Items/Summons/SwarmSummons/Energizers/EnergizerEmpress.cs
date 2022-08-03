@@ -7,7 +7,7 @@ namespace Fargowiltas.Items.Summons.SwarmSummons.Energizers
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Fairy Energizer");
-            Tooltip.SetDefault("Formed after using 10 Jars of Lacewings\n'Wear eye protection when looking'");
+            Tooltip.SetDefault("Reward of the Jars of Lacewings\n'Wear eye protection when looking'");
         }
 
         public override void SetDefaults()

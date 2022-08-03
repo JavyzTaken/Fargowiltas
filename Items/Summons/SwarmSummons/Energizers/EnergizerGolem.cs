@@ -7,7 +7,7 @@ namespace Fargowiltas.Items.Summons.SwarmSummons.Energizers
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Lihzahrd Energizer");
-            Tooltip.SetDefault("Formed after using 10 Runic Power Cells\n'You wish it was spelled \"lizard\"");
+            Tooltip.SetDefault("Reward of the Runic Power Cell\n'You wish it was spelled \"lizard\"");
         }
 
         public override void SetDefaults()

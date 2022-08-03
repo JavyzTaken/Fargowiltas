@@ -7,7 +7,7 @@ namespace Fargowiltas.Items.Summons.SwarmSummons.Energizers
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Prime Energizer");
-            Tooltip.SetDefault("Formed after using 10 Primal Control Chips\n'You feel like a new you'");
+            Tooltip.SetDefault("Reward of the Primal Control Chip\n'You feel like a new you'");
         }
 
         public override void SetDefaults()

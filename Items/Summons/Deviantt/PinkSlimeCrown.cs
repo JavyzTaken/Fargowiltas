@@ -21,6 +21,7 @@ namespace Fargowiltas.Items.Summons.Deviantt
             base.SetStaticDefaults();
             DisplayName.SetDefault("Pink Slime Crown");
             Tooltip.SetDefault("Summons Pinky");
+            Terraria.GameContent.Creative.CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 3;
         }
 
         public override void SetDefaults()

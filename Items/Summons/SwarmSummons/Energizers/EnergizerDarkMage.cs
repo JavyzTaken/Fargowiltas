@@ -7,7 +7,7 @@ namespace Fargowiltas.Items.Summons.SwarmSummons.Energizers
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Mysterious Energizer");
-            Tooltip.SetDefault("Formed after using 10 Really Forbidden Tomes\n'You feel like you've waited one thousand years'");
+            Tooltip.SetDefault("Reward of the Really Forbidden Tome\n'You feel like you've waited one thousand years'");
         }
 
         public override void SetDefaults()

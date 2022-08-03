@@ -9,19 +9,17 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadFish : SwarmSummonBase
     {
-        public OverloadFish() : base(NPCID.DukeFishron, "The ocean swells with ferocious pigs!", 25, "TruffleWorm2")
+        public OverloadFish() : base("Truffle Worm Clump", "Duke Fishron", NPCID.DukeFishron, "The ocean swells with ferocious pigs!", "TruffleWorm2")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Truffle Worm Clump");
-            Tooltip.SetDefault("Summons several Duke Fishrons\nOnly Treasure Bags will be dropped");
-        }
-
-        public override bool CanUseItem(Player player)
-        {
-            return !Fargowiltas.SwarmActive;
+            FargoGlobalNPC.SwarmHpMultiplier = 10;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 25;
+            FargoGlobalNPC.SwarmBagId = ItemID.FishronBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.DukeFishronTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerFish>();
         }
     }
 }

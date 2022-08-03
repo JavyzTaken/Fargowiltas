@@ -1,3 +1,4 @@
+using Fargowiltas.NPCs;
 using Microsoft.Xna.Framework;
 using System.Linq;
 using Terraria;
@@ -69,6 +70,18 @@ namespace Fargowiltas.Projectiles
                 if (split > 1)
                     SplitProj(projectile, split);
             }
+
+            if (FargoWorld.SwarmActive && source is EntitySource_Parent parent && parent.Entity is NPC parentNPC)
+            {
+                projectile.scale = parentNPC.scale;
+
+                //if (parentNPC.GetGlobalNPC<FargoGlobalNPC>().SwarmMaster)
+                //{
+                //    projectile.scale = 3f;
+                //}
+
+            }
+
         }
 
         public override bool PreAI(Projectile projectile)

@@ -9,19 +9,17 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadBetsy : SwarmSummonBase
     {
-        public OverloadBetsy() : base(NPCID.DD2Betsy, "The real Old One's Army is attacking!", 25, "BetsyEgg")
+        public OverloadBetsy() : base("Dragon Egg Tray", "Betsy", NPCID.DD2Betsy, "The real Old One's Army is attacking!", "BetsyEgg")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Dragon Egg Tray");
-            Tooltip.SetDefault("Summons several Betsys\nOnly Treasure Bags will be dropped");
-        }
-
-        public override bool CanUseItem(Player player)
-        {
-            return !Fargowiltas.SwarmActive;
+            FargoGlobalNPC.SwarmHpMultiplier = 10;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 25;
+            FargoGlobalNPC.SwarmBagId = ItemID.BossBagBetsy;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.BossTrophyBetsy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerBetsy>();
         }
     }
 }

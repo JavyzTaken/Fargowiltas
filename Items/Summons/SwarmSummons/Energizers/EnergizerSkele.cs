@@ -7,7 +7,7 @@ namespace Fargowiltas.Items.Summons.SwarmSummons.Energizers
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Boney Energizer");
-            Tooltip.SetDefault("Formed after using 10 Skull Chain Necklaces\n'Reminds you of a cow'");
+            Tooltip.SetDefault("Reward of the Skull Chain Necklace\n'Reminds you of a cow'");
         }
 
         public override void SetDefaults()

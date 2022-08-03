@@ -9,19 +9,17 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadCultist : SwarmSummonBase
     {
-        public OverloadCultist() : base(NPCID.CultistBoss, "Defeaning chants fill your ears!", 25, "CultistSummon")
+        public OverloadCultist() : base("Zealot's Madness", "Lunatic Cultist", NPCID.CultistBoss, "Defeaning chants fill your ears!", "CultistSummon")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Zealot's Madness");
-            Tooltip.SetDefault("Summons several Lunatic Cultists\nOnly Treasure Bags will be dropped");
-        }
-
-        public override bool CanUseItem(Player player)
-        {
-            return !Fargowiltas.SwarmActive;
+            FargoGlobalNPC.SwarmHpMultiplier = 10;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 25;
+            FargoGlobalNPC.SwarmBagId = ItemID.CultistBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.AncientCultistTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerCultist>();
         }
     }
 }

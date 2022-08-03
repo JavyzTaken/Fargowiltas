@@ -7,7 +7,7 @@ namespace Fargowiltas.Items.Summons.SwarmSummons.Energizers
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Leafy Energizer");
-            Tooltip.SetDefault("Formed after using 10 Heart of the Jungles\n'Being a leaf sounds like a good time'");
+            Tooltip.SetDefault("Reward of the Heart of the Jungle\n'Being a leaf sounds like a good time'");
         }
 
         public override void SetDefaults()

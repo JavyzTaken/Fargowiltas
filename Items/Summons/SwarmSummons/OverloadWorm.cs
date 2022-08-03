@@ -9,19 +9,17 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadWorm : SwarmSummonBase
     {
-        public OverloadWorm() : base(NPCID.EaterofWorldsHead, "The ground shifts with formulated precision!", 25, "WormyFood")
+        public OverloadWorm() : base("Worm Chicken", "Eater of Worlds", NPCID.EaterofWorldsHead, "The ground shifts with formulated precision!", "WormyFood")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Worm Chicken");
-            Tooltip.SetDefault("Summons several Eater of Worlds\nOnly Treasure Bags will be dropped");
-        }
-
-        public override bool CanUseItem(Player player)
-        {
-            return !Fargowiltas.SwarmActive;
+            FargoGlobalNPC.SwarmHpMultiplier = 100;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 0;
+            FargoGlobalNPC.SwarmBagId = ItemID.EaterOfWorldsBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.EaterofWorldsTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerWorm>();
         }
     }
 }

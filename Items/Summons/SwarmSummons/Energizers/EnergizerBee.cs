@@ -7,7 +7,7 @@ namespace Fargowiltas.Items.Summons.SwarmSummons.Energizers
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Buzzy Energizer");
-            Tooltip.SetDefault("Formed after using 10 Overstuffed Larva\n'Smells like it tastes like honey'");
+            Tooltip.SetDefault("Reward of the Overstuffed Larva\n'Smells like it tastes like honey'");
         }
 
         public override void SetDefaults()

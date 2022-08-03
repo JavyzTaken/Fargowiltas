@@ -9,19 +9,17 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadQueenSlime : SwarmSummonBase
     {
-        public OverloadQueenSlime() : base(NPCID.QueenSlimeBoss, "Welcome to the truer slime rain!", 25, "JellyCrystal")
+        public OverloadQueenSlime() : base("Swarm Crystal", "Queen Slime", NPCID.QueenSlimeBoss, "Welcome to the truer slime rain!", "JellyCrystal")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Swarm Crystal");
-            Tooltip.SetDefault("Summons several Queen Slimes\nOnly Treasure Bags will be dropped");
-        }
-
-        public override bool CanUseItem(Player player)
-        {
-            return !Fargowiltas.SwarmActive;
+            FargoGlobalNPC.SwarmHpMultiplier = 10;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 25;
+            FargoGlobalNPC.SwarmBagId = ItemID.QueenSlimeBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.QueenSlimeTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerQueenSlime>();
         }
     }
 }

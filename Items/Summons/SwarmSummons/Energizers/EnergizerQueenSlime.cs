@@ -7,7 +7,7 @@ namespace Fargowiltas.Items.Summons.SwarmSummons.Energizers
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Crystalline Energizer");
-            Tooltip.SetDefault("Formed after using 10 Swarm Crystals\n'It feels very slimy'");
+            Tooltip.SetDefault("Reward of the Swarm Crystal\n'It feels very slimy'");
         }
 
         public override void SetDefaults()

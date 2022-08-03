@@ -7,7 +7,7 @@ namespace Fargowiltas.Items.Summons.SwarmSummons.Energizers
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Optical Energizer");
-            Tooltip.SetDefault("Formed after using 10 Eyemalgamations\n'It feels like it's watching you'");
+            Tooltip.SetDefault("Reward of the Eyemalgamation\n'It feels like it's watching you'");
         }
 
         public override void SetDefaults()

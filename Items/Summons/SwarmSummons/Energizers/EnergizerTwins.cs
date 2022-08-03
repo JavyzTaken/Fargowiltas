@@ -7,7 +7,7 @@ namespace Fargowiltas.Items.Summons.SwarmSummons.Energizers
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Sibling Energizer");
-            Tooltip.SetDefault("Formed after using 10 Omnifocal Lens\n'You wish you had more'");
+            Tooltip.SetDefault("Reward of the Omnifocal Lens\n'You wish you had more'");
         }
 
         public override void SetDefaults()

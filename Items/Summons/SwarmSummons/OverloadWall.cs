@@ -9,19 +9,22 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadWall : SwarmSummonBase
     {
-        public OverloadWall() : base(NPCID.WallofFlesh, "A fortress of flesh arises from the depths!", 10, "FleshyDoll")
+        public OverloadWall() : base("Bundle of Dolls", "Wall of Flesh", NPCID.WallofFlesh, "A fortress of flesh arises from the depths!", "FleshyDoll")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Bundle of Dolls");
-            Tooltip.SetDefault("Summons several Walls of Flesh\nOnly Treasure Bags will be dropped");
+            FargoGlobalNPC.SwarmHpMultiplier = 10;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 10;
+            FargoGlobalNPC.SwarmBagId = ItemID.WallOfFleshBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.WallofFleshTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerWall>();
         }
 
         public override bool CanUseItem(Player player)
         {
-            return !Fargowiltas.SwarmActive && player.ZoneUnderworldHeight;
+            return !FargoWorld.SwarmActive && player.ZoneUnderworldHeight;
         }
     }
 }

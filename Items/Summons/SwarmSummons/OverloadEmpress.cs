@@ -9,19 +9,17 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadEmpress : SwarmSummonBase
     {
-        public OverloadEmpress() : base(NPCID.HallowBoss, "Bullet heaven is descending!", 25, "PrismaticPrimrose")
+        public OverloadEmpress() : base("Jar of Lacewings", "Empress of Light", NPCID.HallowBoss, "Bullet heaven is descending!", "PrismaticPrimrose")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Jar of Lacewings");
-            Tooltip.SetDefault("Summons several Empresses of Light\nOnly Treasure Bags will be dropped");
-        }
-
-        public override bool CanUseItem(Player player)
-        {
-            return !Fargowiltas.SwarmActive;
+            FargoGlobalNPC.SwarmHpMultiplier = 10;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 20;
+            FargoGlobalNPC.SwarmBagId = ItemID.FairyQueenBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.FairyQueenTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerEmpress>();
         }
     }
 }

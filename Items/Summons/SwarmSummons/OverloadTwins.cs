@@ -9,19 +9,22 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadTwins : SwarmSummonBase
     {
-        public OverloadTwins() : base(NPCID.Retinazer, "A legion of glowing iris sing a dreadful song!", 25, "MechEye")
+        public OverloadTwins() : base("Omnifocal Lens", "Twins", NPCID.Retinazer, "A legion of glowing iris sing a dreadful song!", "MechEye")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Omnifocal Lens");
-            Tooltip.SetDefault("Summons several sets of Twins\nOnly Treasure Bags will be dropped");
+            FargoGlobalNPC.SwarmHpMultiplier = 10;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 25;
+            FargoGlobalNPC.SwarmBagId = ItemID.TwinsBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.SpazmatismTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerTwins>();
         }
 
         public override bool CanUseItem(Player player)
         {
-            return !Fargowiltas.SwarmActive && !Main.dayTime;
+            return !FargoWorld.SwarmActive && !Main.dayTime;
         }
     }
 }

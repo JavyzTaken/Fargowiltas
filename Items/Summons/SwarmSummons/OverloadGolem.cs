@@ -9,19 +9,22 @@ namespace Fargowiltas.Items.Summons.SwarmSummons
 {
     public class OverloadGolem : SwarmSummonBase
     {
-        public OverloadGolem() : base(NPCID.Golem, "Ancient automatons come crashing down!", 25, "LihzahrdPowerCell2")
+        public OverloadGolem() : base("Runic Power Cell", "Golem", NPCID.Golem, "Ancient automatons come crashing down!", "LihzahrdPowerCell2")
         {
         }
 
-        public override void SetStaticDefaults()
+        protected override void setSwarmStats()
         {
-            DisplayName.SetDefault("Runic Power Cell");
-            Tooltip.SetDefault("Summons several Golems\nOnly Treasure Bags will be dropped");
+            FargoGlobalNPC.SwarmHpMultiplier = 10;
+            FargoGlobalNPC.SwarmMinionSpawnCount = 25;
+            FargoGlobalNPC.SwarmBagId = ItemID.GolemBossBag;
+            FargoGlobalNPC.SwarmTrophyId = ItemID.GolemTrophy;
+            FargoGlobalNPC.SwarmEnergizerId = ModContent.ItemType<Energizers.EnergizerGolem>();
         }
 
         public override bool CanUseItem(Player player)
         {
-            return !Fargowiltas.SwarmActive && NPC.downedPlantBoss;
+            return !FargoWorld.SwarmActive && NPC.downedPlantBoss;
         }
     }
 }
