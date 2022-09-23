@@ -21,6 +21,17 @@
             Deviantt: The Deviantt sells items which may attract even the rarest of foes.
             Painter: The Painter is known for being scenic, consider moving him to different biomes for a fresh set of paintings!
             GoblinArmy: Disturbing the cores within the evil wastes may attract goblins!
+            AnglerRapidQuests: The angler is raring to go! He'll give you quests no matter the time!
+            RottenEggs: Town NPCs absolutely despise rotten eggs. Throwing even a single one at them while cause their immediate departure!
+            BossBiomeChange: Certain bosses will always treat you as if you were on their home turf.
+            InfoAccessoriesInBank: Advances in informative accessory technology have allowed many accessies to function within your piggy bank!
+            UnlimitedPotions: Keep enough potions on you at all times and you'll begin to feel their effects without taking even a single sip!
+            TrophyCrafting: Feeling victorious? Reward yourself with a crisp new boss drop crafted directly from a boss' trophy!
+            DynamiteUses: Dynamite has many uses! Investing even a little bit of time into uncovering what they may be crafted into may benefit you one day.
+            FastTravel: "Need to get out in a pinch? Pressing a certain hotkey may activate a teleportation device." # TODO: Localize hotkey when that is added.
+            WaterFountains: Water Fountains change the biome around them.
+            BiomeRenewal: Got a green thumb? Spread your favorite biome around with Biome Renewals!
+            # TODO: Insta-item tips.
         }
         
         # Displayed with Abom clears events.
