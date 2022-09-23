@@ -1,0 +1,15 @@
+﻿{
+    Mods.Fargowiltas: {
+        # The names for recipe groups. "Any " is prepended before them in English, and the equivalent translation is prepended in other languages.
+        RecipeGroups: {
+            EvilWood: Evil Wood
+            CommonFish: Common Fish
+            Dragonfly: Dragonfly
+            Butterfly: Butterfly
+            CaughtNPC: Caught Town NPC
+            Banner: Banner
+            ArmoredBones: Armored Bones Banner
+            PirateBanner: Pirate Banner
+        }
+    }
+}

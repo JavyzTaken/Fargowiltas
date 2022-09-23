@@ -1,0 +1,9 @@
+﻿{
+    Mods.Fargowiltas: {
+        # Miscellaneous messages displayed in chat by various means.
+        MessageInfo: {
+            SiblingPylonNotNearSiblings: That pylon needs the mutated siblings to function.
+            NearbySiblingPylonNotNearSiblings: The nearby pylon needs the mutated siblings to function.
+        }
+    }
+}

@@ -1,0 +1,50 @@
+﻿{
+    Mods.Fargowiltas: {
+        Config: {
+            CanSpawn: Can Spawn
+
+            TownNPCsHeader: Town NPCs
+            CatchNPCs: "[i:267] Catch Town NPCs"
+            NPCSales: "[i:267] Extra Town NPC sales"
+            SaferBoundNPCs: "[i:1274] Rescuable Town NPCs take no contact damage"
+
+            SeasonsHeader: Seasons
+            Halloween: "[i:1774] Halloween Season Active"
+            Christmas: "[i:1869] Christmas Season Active"
+
+            SeedsHeader: Secret World Seeds
+            DrunkWorld: "[i:353] Drunk World Active"
+            BeeWorld: "[i:1133] Bee World Active"
+            WorthyWorld: "[i:2107] For the Worthy World Active"
+            CelebrationWorld: "[i:3732] Celebration World Active"
+            ConstantWorld: "[i:5109] Constant World Active"
+
+            UnlimitedHeader: Unlimited
+            UnlimitedAmmo: "[i:771] Unlimited Ammo at 3996+ in Hardmode"
+            UnlimitedConsumableWeapons: "[i:42] Unlimited Consumable Weapons at 3996+ in Hardmode"
+            UnlimitedPotionBuffsOn120: "[i:292] Unlimited Buffs at 30/15+ when carried"
+            UnlimitedPotionBuffsOn120Tooltip: 30+ for potions, 15+ for class stations (e.g. Sharpening Table)
+
+            MiscHeader: Miscellaneous
+            ExtraBuffSlots: "[i:3000] Additional Buff Slots"
+            ExpandedTooltips: "[i:171] More tooltips indicate Mutant Mod changes"
+            AnglerQuestInstantReset: "[i:2374] Angler Quest Instant Reset"
+            ExtraLures: "[i:2373] Extra Lures on Fishing Rods"
+            StalkerMoneyTrough: "[i:3213] Stalker Money Trough"
+            RottenEggs: "[i:1809] Powerful Rotten Eggs"
+            BannerRecipes: "[i:1683] Banner Recipes"
+            IncreaseMaxStack: "[i:2] Increased Max Stacks"
+            ExtractSpeed: "[i:997] Increased Extractinator Speed"
+            Fountains: "[i:909] Fountains Cause Biomes"
+            BossZen: "[i:3117] No enemies spawn during boss fights"
+            PiggyBankAcc: "[i:87] Informational and Construction Accessories work in Piggy Bank"
+            FasterLavaFishing: "[i:4881] Faster Fishing in Lava"
+            TorchGodEX: "[i:5043] Torch God's Favor Automatically Swaps Placed Torches"
+            TorchGodEXTooltip: "Obeys true torch luck, which may differ from Torch God's Favor"
+            DebuffOpacity: "[i:1612] Debuff Display Max Opacity"
+            DebuffFaderRatio: "[i:1612] Debuff Duration Fader Strength"
+            TransparentFriendlyProjectiles: "[i:1309] Transparent Friendly Projectiles"
+            TransparentFriendlyProjectilesTooltip: "Use with vanilla setting for Quality at Medium or Low for best results"
+        }
+    }
+}

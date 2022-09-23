@@ -1,0 +1,11 @@
+﻿{
+    # TODO: Does this still not work?
+    # Add translations for when the Princess is talking about our modded NPCs.
+    TownNPCMood_Princess: {
+        LoveNPC_Fargowiltas/Abominationn: "{NPCName} tells great stories about his battles!"
+        LoveNPC_Fargowiltas/Deviantt: "{NPCName} is so fun, we could talk for hours!"
+        LoveNPC_Fargowiltas/Mutant: "{NPCName} has some amazing items, they're great for meeting new friends!"
+        LoveNPC_Fargowiltas/Squirrel: "{NPCName} is really adorable!"
+        LoveNPC_Fargowiltas/LumberJack: "{NPCName} is so strong, I want to try chopping wood some time!"
+    }
+}
