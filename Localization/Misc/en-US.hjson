@@ -4,6 +4,9 @@
         MessageInfo: {
             SiblingPylonNotNearSiblings: That pylon needs the mutated siblings to function.
             NearbySiblingPylonNotNearSiblings: The nearby pylon needs the mutated siblings to function.
+            
+            # {0} has awoken! - but plural
+            HaveAwoken: "{0} have awoken!"
         }
         
         # Game tips that appear during world loading and other menus.

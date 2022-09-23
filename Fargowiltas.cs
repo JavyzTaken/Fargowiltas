@@ -525,30 +525,11 @@ namespace Fargowiltas
                     //    npcName = Main.npc[npcID].modNPC.DisplayName.GetDefault();
                     //}
 
+                    // TODO: Will these be localized for users that receive this command from a server? Oh well...
                     if (namePlural)
-                    {
-                        if (Main.netMode == NetmodeID.SinglePlayer)
-                        {
-                            Main.NewText(npcName + " have awoken!", 175, 75);
-                        }
-                        else
-                        if (Main.netMode == NetmodeID.Server)
-                        {
-                            ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral(npcName + " have awoken!"), new Color(175, 75, 255));
-                        }
-                    }
+                        FargoUtils.PrintText(Language.GetTextValue("Mods.Fargowiltas.MessageInfo.HaveAwoken", npcName), 175, 75, 255);
                     else
-                    {
-                        if (Main.netMode == NetmodeID.SinglePlayer)
-                        {
-                            Main.NewText(Language.GetTextValue("Announcement.HasAwoken", npcName), 175, 75);
-                        }
-                        else
-                        if (Main.netMode == NetmodeID.Server)
-                        {
-                            ChatHelper.BroadcastChatMessage(NetworkText.FromKey("Announcement.HasAwoken", new object[] { NetworkText.FromLiteral(npcName) }), new Color(175, 75, 255));
-                        }
-                    }
+                        FargoUtils.PrintText(Language.GetTextValue("Announcement.HasAwoken", npcName), 175, 75, 255);
                 }
             }
             else
