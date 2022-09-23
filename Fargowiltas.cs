@@ -380,40 +380,41 @@ namespace Fargowiltas
                 if (Main.invasionType != 0)
                 {
                     Main.invasionType = 0;
-                    FargoUtils.PrintText("The invaders have left!", 175, 75, 255);
+                    FargoUtils.PrintText(Language.GetTextValue("Mods.Fargowiltas.InvasionClearMessages.Invaders"), 175, 75, 255);
                 }
 
                 if (Main.pumpkinMoon)
                 {
                     Main.pumpkinMoon = false;
-                    FargoUtils.PrintText("The Pumpkin Moon is lowering...", 175, 75, 255);
+                    FargoUtils.PrintText(Language.GetTextValue("Mods.Fargowiltas.InvasionClearMessages.PumpkinMoon"), 175, 75, 255);
                 }
 
                 if (Main.snowMoon)
                 {
                     Main.snowMoon = false;
-                    FargoUtils.PrintText("The Frost Moon is lowering...", 175, 75, 255);
+                    FargoUtils.PrintText(Language.GetTextValue("Mods.Fargowiltas.InvasionClearMessages.FrostMoon"), 175, 75, 255);
                 }
 
                 if (Main.eclipse)
                 {
                     Main.eclipse = false;
-                    FargoUtils.PrintText("A solar eclipse is not happening!", 175, 75, 255);
+                    FargoUtils.PrintText(Language.GetTextValue("Mods.Fargowiltas.InvasionClearMessages.SolarEclipse"), 175, 75, 255);
                 }
 
                 if (Main.bloodMoon)
                 {
                     Main.bloodMoon = false;
-                    FargoUtils.PrintText("The blood moon is descending...", 175, 75, 255);
+                    FargoUtils.PrintText(Language.GetTextValue("Mods.Fargowiltas.InvasionClearMessages.BloodMoon"), 175, 75, 255);
                 }
 
                 if (Main.WindyEnoughForKiteDrops)
                 {
                     Main.windSpeedTarget = 0;
                     Main.windSpeedCurrent = 0;
-                    FargoUtils.PrintText("The wind has ended!", 175, 75, 255);
-                }
-
+                    FargoUtils.PrintText(Language.GetTextValue("Mods.Fargowiltas.InvasionClearMessages.Wind"), 175, 75, 255);
+                } 
+                
+                // TODO: Slime Rain message.
                 if (Main.slimeRain)
                 {
                     Main.StopSlimeRain();
@@ -421,13 +422,14 @@ namespace Fargowiltas
                     Main.slimeWarningTime = 1;
                 }
 
+                // TODO: Party message.
                 if (BirthdayParty.PartyIsUp)
                     BirthdayParty.CheckNight();
 
                 if (DD2Event.Ongoing && Main.netMode != NetmodeID.MultiplayerClient)
                 {
                     DD2Event.StopInvasion();
-                    FargoUtils.PrintText("The Old One's Army is leaving!", 175, 75, 255);
+                    FargoUtils.PrintText(Language.GetTextValue("Mods.Fargowiltas.InvasionClearMessages.OldOnesArmy"), 175, 75, 255);
                 }
 
                 if (Sandstorm.Happening)
@@ -435,7 +437,7 @@ namespace Fargowiltas
                     Sandstorm.Happening = false;
                     Sandstorm.TimeLeft = 0;
                     Sandstorm.IntendedSeverity = 0;
-                    FargoUtils.PrintText("The sandstorm has ended!", 175, 75, 255);
+                    FargoUtils.PrintText(Language.GetTextValue("Mods.Fargowiltas.InvasionClearMessages.Sandstorm"), 175, 75, 255);
                 }
 
                 if (NPC.downedTowers && (NPC.LunarApocalypseIsUp || NPC.ShieldStrengthTowerNebula > 0 || NPC.ShieldStrengthTowerSolar > 0 || NPC.ShieldStrengthTowerStardust > 0 || NPC.ShieldStrengthTowerVortex > 0))
@@ -458,7 +460,7 @@ namespace Fargowiltas
                             Main.npc[i].StrikeNPCNoInteraction(int.MaxValue, 0f, 0);
                         }
                     }
-                    FargoUtils.PrintText("Celestial creatures are not invading!", 175, 75, 255);
+                    FargoUtils.PrintText(Language.GetTextValue("Mods.Fargowiltas.InvasionClearMessages.CelestialCreatures"), 175, 75, 255);
                 }
 
                 if (Main.IsItRaining || Main.IsItStorming)
@@ -467,7 +469,7 @@ namespace Fargowiltas
                     Main.cloudAlpha = 0;
                     if (Main.netMode == NetmodeID.Server)
                         Main.SyncRain();
-                    FargoUtils.PrintText("The rain has ended!", 175, 75, 255);
+                    FargoUtils.PrintText(Language.GetTextValue("Mods.Fargowiltas.InvasionClearMessages.Rain"), 175, 75, 255);
                 }
 
                 FargoWorld.AbomClearCD = 7200;

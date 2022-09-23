@@ -19,5 +19,21 @@
             Painter: The Painter is known for being scenic, consider moving him to different biomes for a fresh set of paintings!
             GoblinArmy: Disturbing the cores within the evil wastes may attract goblins!
         }
+        
+        # Displayed with Abom clears events.
+        InvasionClearMessages: {
+            Invaders: "The invaders begin their retreat!" # The invaders have left!
+            PumpkinMoon: "The great spirit of Hollow's Eve returns to a slumber..." # The Pumpkin Moon is lowering...
+            FrostMoon: "The cold night warms once more..." # The Frost Moon is lowering...
+            SolarEclipse: "The sun shines brightly once more!" # A solar eclipse is not happening!
+            BloodMoon: "The moon returns to a paler white..." # The blood moon is descending...
+            Wind: "The howling winds begin to calm..." # The wind has ended!
+            # TODO: Slime Rain (no old)
+            # TODO: Parties (no old)
+            OldOnesArmy: "The old one's army is retreating..." # The Old One's Army is leaving!
+            Sandstorm: "The desert begins to settle..." # The sandstorm has ended!
+            CelestialCreatures: "The celestial creatures begin their retreat!" # Celestial creatures are not invading!
+            Rain: "The skies begin to clear!" # The rain has ended!
+        }
     }
 }
