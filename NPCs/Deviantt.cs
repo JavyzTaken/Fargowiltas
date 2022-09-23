@@ -20,16 +20,8 @@ namespace Fargowiltas.NPCs
         private bool canSayDefeatQuote = true;
         private int defeatQuoteTimer = 900;
 
-        //public override bool Autoload(ref string name)
-        //{
-        //    name = "Deviantt";
-        //    return mod.Properties.Autoload;
-        //}
-
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Deviantt");
-
             Main.npcFrameCount[NPC.type] = 23;
             NPCID.Sets.ExtraFramesCount[NPC.type] = 9;
             NPCID.Sets.AttackFrameCount[NPC.type] = 4;

@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Fargowiltas.Localization;
 using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.Personalities;
@@ -46,7 +47,6 @@ namespace Fargowiltas.NPCs
 
         public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Squirrel");
 			Main.npcFrameCount[NPC.type] = 6;
 			NPCID.Sets.ExtraFramesCount[NPC.type] = 9;
 			NPCID.Sets.AttackFrameCount[NPC.type] = 4;
@@ -143,11 +143,19 @@ namespace Fargowiltas.NPCs
 
         public override bool CanGoToStatue(bool toKingStatue) => toKingStatue;
 
-        public override List<string> SetNPCNameList()
-        {
-            string[] names = { "Rick", "Acorn", "Puff", "Coco", "Truffle", "Furgo", "Squeaks" };
+        public override List<string> SetNPCNameList() {
+            string[] names =
+            {
+                "Squirrel.Names.Rick", 
+                "Squirrel.Names.Acorn",
+                "Squirrel.Names.Puff",
+                "Squirrel.Names.Coco", 
+                "Squirrel.Names.Truffle",
+                "Squirrel.Names.Furgo",
+                "Squirrel.Names.Squeaks"
+            };
 
-            return new List<string>(names);
+            return new List<string>(names.Select(x => MutantLangEntry.NPCs(x).ToString()));
         }
 
 		public override string GetChat()
@@ -155,16 +163,16 @@ namespace Fargowiltas.NPCs
             showCycleShop = GetSellableItems().Count / maxShop > 0 && !ModLoader.TryGetMod("ShopExpander", out _);
 
             if (Main.bloodMoon)
-                return "[c/FF0000:You will suffer.]";
+                return $"[c/FF0000:{MutantLangEntry.NPCs("Squirrel.Dialog.CalamityMod")}]";
 
             switch (Main.rand.Next(3))
 			{
 				case 0:
-					return "*squeak*";
+					return MutantLangEntry.NPCs("Squirrel.Dialog.Squeak");
 				case 1:
-					return "*chitter*";
+					return MutantLangEntry.NPCs("Squirrel.Dialog.Chitter");
 				default:
-					return "*crunch crunch*";
+					return MutantLangEntry.NPCs("Squirrel.Dialog.CrunchCrunch");
 			}
 		}
 
@@ -174,7 +182,7 @@ namespace Fargowiltas.NPCs
             if (showCycleShop)
             {
                 button += $" {shopNum + 1}";
-                button2 = "Cycle Shop";
+                button2 = MutantLangEntry.NPCs("CycleShop");
             }
         }
 
@@ -256,6 +264,7 @@ namespace Fargowiltas.NPCs
                 return ShopGroup.Potion;
             }
 
+            // TODO: This requires localization. Saving for another day...
             if (item.ModItem != null && (item.ModItem.Mod.Name.Equals("FargowiltasSouls") || item.ModItem.Mod.Name.Equals("FargowiltasSoulsDLC")))
             {
                 if (item.ModItem.Name.EndsWith("Enchant"))

@@ -21,16 +21,8 @@ namespace Fargowiltas.NPCs
         private bool canSayDefeatQuote = true;
         private int defeatQuoteTimer = 900;
 
-        //public override bool Autoload(ref string name)
-        //{
-        //    name = "Abominationn";
-        //    return mod.Properties.Autoload;
-        //}
-
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Abominationn");
-
             Main.npcFrameCount[NPC.type] = 25;
             NPCID.Sets.ExtraFramesCount[NPC.type] = 9;
             NPCID.Sets.AttackFrameCount[NPC.type] = 4;

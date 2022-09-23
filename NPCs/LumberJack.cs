@@ -20,16 +20,8 @@ namespace Fargowiltas.NPCs
         private bool dayOver;
         private bool nightOver;
 
-        //public override bool Autoload(ref string name)
-        //{
-        //    name = "LumberJack";
-        //    return mod.Properties.Autoload;
-        //}
-
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("LumberJack");
-
             Main.npcFrameCount[NPC.type] = 25;
 
             NPCID.Sets.ExtraFramesCount[NPC.type] = 9;

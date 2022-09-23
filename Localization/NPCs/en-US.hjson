@@ -119,8 +119,18 @@
             }
         }
         
+        NPCName: {
+            Abominationn: Abominationn
+            Deviantt: Deviantt
+            LumberJack: LumberJack
+            Mutant: Mutant
+            Squirrel: Squirrel
+            SuperDummy: Super Dummy
+        }
+        
         NPCs: {
             NewItemUnlocked: "A new item has been unlocked in {0}'s shop!"
+            CycleShop: Cycle Shop
             
             DevianttDialog: {
                 # Bosses and Events
@@ -167,6 +177,133 @@
                 # ThisIsAnRPGGameAfterAllTip: Why not go hunting for some rare monsters every once in a while? Plenty of treasure to be looted and all that.
                 ChlorophyteLifeFruitTip: If you ask me, Plantera is really letting herself go. A diet of Chlorophyte Ore and Life Fruit isn't THAT healthy! Why don't you help her slim down?
                 # EnchantmentsUsedToBeActuallyHardToObtainTip: Ever tried out those 'enchantment' thingies? Try breaking a couple altars and see what you can make.
+            }
+            
+            Mutant: {
+                Names: {
+                    Flacken: Flacken
+                    Dorf: Dorf
+                    Bingo: Bingo
+                    Hans: Hans
+                    Fargo: Fargo
+                    Grim: Grim
+                    Mike: Mike
+                    Fargu: Fargu
+                    Terrance: Terrance
+                    CattyNPem: Catty N. Pem
+                    Tom: Tom
+                    Weirdus: Weirdus
+                    Polly: Polly
+                }
+
+                Dialog: {
+                    EmbraceEternity: Congratulations. You truly embraced eternity... at least, I think you did? So what happens next? Ascend from this plane of existence? Fight a transcendant cat-like entity? Destroy the world? All the power's in your hands now.
+                    DownedMutant: Good work beating me, I guess. I still feel like stretching my wings... Why don't we go at it for real next time?
+                    
+                    MutantArmor: Nice armor you have, very realistic skin. As a matter of fact, mind if I borrow it? Your skin, that is.
+                    
+                    Savagery: Savagery, barbarism, bloodthirst, that's what I like seeing in people.
+                    StrongerProgression: The stronger you get, the more stuff I sell. Makes sense, right?
+                    DeathPerception: There's something all of you have that I don't... Death perception, I think it's called?
+                    SelfSummon: It would be pretty cool if I sold a summon for myself...
+                    BuyInBulk: The only way to get stronger is to keep buying from me and in bulk too!
+                    Apple: Why are you looking at me like that, all I did was eat an apple.
+                    JustMonika: Don't bother with anyone else, all you'll ever need is right here.
+                    Lucky: You're lucky I'm on your side.
+                    HamAndSwiss: Why yes I would love a ham and swiss sandwich.
+                    Clothes: Should I start wearing clothes? ...Nah.
+                    GoldSpending: It's not like I can actually use all the gold you're spending.
+                    ViolenceForViolence: Violence for violence is the law of the beast.
+                    DesertThemedBossesAreFunnyThoriumSpiritCalamityHolyCrapTrelamiumReference: Those guys really need to get more creative. All of their first bosses are desert themed!
+                    BrotherlyLove: You say you want to know how a Mutant and Abominationn are brothers? You're better off not knowing.
+                    CalamityModReference: I'm all you need for a calamity.
+                    BowBeforeMe: Everything shall bow before me! ...after you make this purchase.
+                    ZombiesForBreakfast: It's clear that I'm helping you out, but uh.. what's in this for me? A house you say? I eat zombies for breakfast.
+                    SpacebarJump: Can I jump? No, I don't have something called a 'spacebar'.
+                    GotYourNose: Got your nose, I needed one to replace mine.
+                    Terry: What's a Terry?
+                    BlueDoll: Why do so many creatures carry around a weird looking blue doll? The world may never know.
+                    ImpendingDoomApproaches: Impending doom approaches. ...If you don't buy anything of course.
+                    ThirdDimension: I've heard of a '3rd dimension', I wonder what that looks like.
+                    FabsolCalamity: Boy don't I look fabulous today.
+                    FewerFriends: You have fewer friends than I do eyes.
+                    DivermanuelSamuel: The ocean is a dangerous place, I wonder where Diver is?
+                    Eearth: Do you know what an Ee-arth is?
+                    Apotheosis: I can't even spell 'apotheosis', do you expect me to know what it is?
+                    NoPockets: Where do monsters get their gold from? ...I don't have pockets you know.
+                    CatPerson: Dogs are cool and all, but cats don't try to bite my brain.
+                    GreenDragon: Beware the green dragon... What's that face mean?
+                    Ohayou: Where is this O-hi-o I keep hearing about.
+                    IAmAGreedyBastard: I've told you 56 times already, I'm busy... Oh wait you want to buy something, I suppose I have time.
+                    SoulOfSouls: I've heard of a 'Soul of Souls' that only exists in 2015.
+                    EXBoxLive: Adding EX after everything makes it way more difficult.
+                    ComedicCritiqueOnModernArt: I think that all modern art looks great, especially the bloody stuff.
+                    HowManyGuidesDoesItTakeToOfferGoodAdvice: How many guides does it take to change a lightbulb? ... I don't know, how about you ask him.
+                    Bedless: Good thing I don't have a bed, I'd probably never leave it.
+                    UpdateSoonTm: What's this about an update? Sounds rare.
+                    Slacking: If you need me I'll be slacking off somewhere.
+                    Fargo: What do you mean who is Fargo!
+                    Ech: Have you seen the ech cat?
+                    SmoothJazzAndOtherFunBeatsToJamTo: I don't understand music nowadays, I prefer some smooth jazz... or the dying screams of monsters.
+                    Cthulhu: Cthulhu's got nothing on me!
+                    InfiniteUseBossSummons: I heard of a rumor of infinite use boss summons. Makes me sick..
+                    
+                    Collecting: Now that you've defeated the big guy, I'd say it's time to start collecting those materials!
+                    RematchMe: What's that? You want to fight me? ...sure, I guess.
+                    FightMe: What's that? You want to fight me? ...maybe if I had a reason.
+                    BadRatsIsAPhysicsPuzzleGameWhereRatsFinallyGetTheirBloodyRevengeOnTheirNewPrisonersTheCats: What's that? You want to fight me? ...you're not worthy you rat.
+                    # CalamitiModNaTelefonie: Why would you do this.
+                    # DontMixContentModsItsKindOfIronicThoughBecauseSoulsIsAContentModAndSoulsDLCExists: I feel a great imbalance in this world.
+                    # Trelamium2: A great choice, shame about that first desert boss thing though.
+                    PumpkinMoon: A bit spooky tonight, isn't it.
+                    Coat: I'd ask for a coat, but I don't think you have any my size.
+                    SlimeRain: Weather seems odd today, wouldn't you agree?
+                    BloodMoon: Lovely night, isn't it?
+                    WhyDidRedigitAddAPeriodJokeIntoTheGame: I hope the constant arguing I'm hearing isn't my fault.
+                    Sleepy: I'd follow and help, but I'd much rather sit around right now.
+                    
+                    PartyGirlParty: "{0} is the one who invited me, I don't understand why though."
+                    Party: I don't know what everyone's so happy about, but as long as nobody mistakes me for a Pigronata, I'm happy too.
+                    Nurse: "Whenever we're alone, {0} keeps throwing syringes at me, no matter how many times I tell her to stop!"
+                    WithDoctor: "Please go tell {0} to drop the 'mystical' shtick, I mean, come on! I get it, you make tainted water or something."
+                    MutantCanBeArousedCanonically: "Why does {0}'s outfit make my wings flutter?"
+                    Stylist: "{0} once gave me a wig... I look hideous with long hair."
+                    Truffle: "That mutated mushroom seems like my type of fella."
+                    TaxCollector: "{0} keeps asking me for my money, but he won't accept my spawners!"
+                    # GitHub Co-Pilot generated this, and even though it isn't real I think this is a good line: ArmsDealer: "{0} is a bit of a hoarder, I wonder if he has any spare weapons lying around?"
+                    Guide: "Any idea why {0} is always cowering in fear when I get near him?"
+                    Cyborg: "If any of us could play instruments, I'd totally start a band with {0, {1}, and {2}."
+                    # This is also a FAKE GHCP QUOTE: PartyGirl: "I'm not sure why {0} keeps inviting me to parties, but I'm not complaining."
+                    PartyGirl: "Man, {0}'s confetti keeps getting stuck to my wings"
+                    Demolitionist: "I'm surprised {0} hasn't blown a hole in the floor yet, on second thought that sounds fun."
+                    Tavernkeep: "{0} keeps suggesting I drink some beer, something tells me he wouldn't like me when I'm drunk though."
+                    DyeTrader: "{0} wants to see what I would look like in blue... I don't know how to feel."
+                }
+                
+                Buttons: {
+                    PreHM: Pre Hardmode
+                    Hardmode: Hardmode
+                    PostML: Post Moon Lord
+                }
+            }
+            
+            Squirrel: {
+                Names: {
+                    Rick: Rick
+                    Acron: Acorn
+                    Puff: Puff
+                    Coco: Coco
+                    Truffle: Truffle
+                    Furgo: Furgo
+                    Squeaks: Squeaks
+                }
+
+                Dialog: {
+                    CalamityMod: You will suffer.
+                    Squeak: *squeak*
+                    Chitter: *chitter*
+                    CrunchCrunch: *crunch crunch*
+                }
             }
         }
     }

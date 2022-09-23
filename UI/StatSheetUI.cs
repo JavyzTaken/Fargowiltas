@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using System;
 using System.Globalization;
 using System.Linq;
+using Fargowiltas.Localization;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ID;
@@ -99,9 +100,9 @@ namespace Fargowiltas.UI
 
             string RenderBattleCry()
             {
-                string battle = Language.GetTextValue("Mods.Fargowiltas.UI.StatSheet.Battle");
-                string calming = Language.GetTextValue("Mods.Fargowiltas.UI.StatSheet.Calming");
-                string none = Language.GetTextValue("Mods.Fargowiltas.UI.StatSheet.None");
+                string battle = new MutantLangEntry("UI.StatSheet.Battle");
+                string calming = new MutantLangEntry("UI.StatSheet.Calming");
+                string none = new MutantLangEntry("UI.StatSheet.None");
                 return modPlayer.BattleCry ? $"[c/ff0000:{battle}]" : modPlayer.CalmingCry ? $"[c/00ffff:{calming}]" : none;
             }
             AddStatFromFargoKey("Life", player.statLifeMax2, ItemID.LifeCrystal);
@@ -125,7 +126,7 @@ namespace Fargowiltas.UI
 
         public void AddStatFromFargoKey(string key, object stat, int item = -1)
         {
-            AddStat(Language.GetTextValue("Mods.Fargowiltas.UI.StatSheet." + key, stat), item);
+            AddStat(new MutantLangEntry("UI.StatSheet." + key, stat), item);
         }
 
         public void AddStat(string text, int item = -1)

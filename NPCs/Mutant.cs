@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.GameContent.Events;
@@ -9,6 +10,7 @@ using static Terraria.ModLoader.ModContent;
 using Fargowiltas.Items.Summons.SwarmSummons;
 using Fargowiltas.Items.Misc;
 using Fargowiltas.Items.Summons.Mutant;
+using Fargowiltas.Localization;
 using Fargowiltas.Projectiles;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.Personalities;
@@ -27,16 +29,8 @@ namespace Fargowiltas.NPCs
         private bool canSayDefeatQuote = true;
         private int defeatQuoteTimer = 900;
 
-        //public override bool Autoload(ref string name)
-        //{
-        //    name = "Mutant";
-        //    return true;// Mod.Properties.Autoload;
-        //}
-
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Mutant");
-
             Main.npcFrameCount[NPC.type] = 25;
             NPCID.Sets.ExtraFramesCount[NPC.type] = 9;
             NPCID.Sets.AttackFrameCount[NPC.type] = 4;
@@ -139,11 +133,25 @@ namespace Fargowiltas.NPCs
             return GetInstance<FargoConfig>().Mutant && FargoWorld.DownedBools["boss"] && !FargoGlobalNPC.AnyBossAlive();
         }
 
-        public override List<string> SetNPCNameList()
-        {
-            string[] names = { "Flacken", "Dorf", "Bingo", "Hans", "Fargo", "Grim", "Mike", "Fargu", "Terrance", "Catty N. Pem", "Tom", "Weirdus", "Polly" };
+        public override List<string> SetNPCNameList() {
+            string[] names =
+            {
+                "Mods.Fargowiltas.NPCs.Mutant.Names.Flacken", 
+                "Mods.Fargowiltas.NPCs.Mutant.Names.Dorf", 
+                "Mods.Fargowiltas.NPCs.Mutant.Names.Bingo",
+                "Mods.Fargowiltas.NPCs.Mutant.Names.ans",
+                "Mods.Fargowiltas.NPCs.Mutant.Names.Fargo", 
+                "Mods.Fargowiltas.NPCs.Mutant.Names.Grim",
+                "Mods.Fargowiltas.NPCs.Mutant.Names.Mike", 
+                "Mods.Fargowiltas.NPCs.Mutant.Names.Fargu", 
+                "Mods.Fargowiltas.NPCs.Mutant.Names.Terrance",
+                "Mods.Fargowiltas.NPCs.Mutant.Names.CattyNPem", 
+                "Mods.Fargowiltas.NPCs.Mutant.Names.Tom", 
+                "Mods.Fargowiltas.NPCs.Mutant.Names.Weirdus",
+                "Mods.Fargowiltas.NPCs.Mutant.Names.Polly"
+            };
 
-            return new List<string>(names);
+            return new List<string>(names.Select(x => Language.GetTextValue(x)));
         }
 
         public override string GetChat()
@@ -153,93 +161,93 @@ namespace Fargowiltas.NPCs
                 canSayDefeatQuote = false;
 
                 if ((bool)ModLoader.GetMod("FargowiltasSouls").Call("EternityMode"))
-                    return "Congratulations. You truly embraced eternity... at least, I think you did? So what happens next? Ascend from this plane of existence? Fight a transcendant cat-like entity? Destroy the world? All the power's in your hands now.";
-                else
-                    return "Good work beating me, I guess. I still feel like stretching my wings... Why don't we go at it for real next time?";
+                    return MutantLangEntry.NPCs("Mutant.Dialog.EmbraceEternity");
+                
+                return MutantLangEntry.NPCs("Mutant.Dialog.DownedMutant");
             }
 
             if (Fargowiltas.ModLoaded["FargowiltasSouls"] && Main.rand.NextBool(4))
             {
                 if ((bool)ModLoader.GetMod("FargowiltasSouls").Call("MutantArmor"))
-                    return "Nice armor you have, very realistic skin. As a matter of fact, mind if I borrow it? Your skin, that is.";
+                    return MutantLangEntry.NPCs("Mutant.Dialog.MutantArmor");
             }
 
-            List<string> dialogue = new List<string>
+            List<LangEntry> dialogue = new List<string>
             {
-                "Savagery, barbarism, bloodthirst, that's what I like seeing in people.",
-                "The stronger you get, the more stuff I sell. Makes sense, right?",
-                "There's something all of you have that I don't... Death perception, I think it's called?",
-                "It would be pretty cool if I sold a summon for myself...",
-                "The only way to get stronger is to keep buying from me and in bulk too!",
-                "Why are you looking at me like that, all I did was eat an apple.",
-                "Don't bother with anyone else, all you'll ever need is right here.",
-                "You're lucky I'm on your side.",
-                "Why yes I would love a ham and swiss sandwich.",
-                "Should I start wearing clothes? ...Nah.",
-                "It's not like I can actually use all the gold you're spending.",
-                "Violence for violence is the law of the beast.",
-                "Those guys really need to get more creative. All of their first bosses are desert themed!",
-                "You say you want to know how a Mutant and Abominationn are brothers? You're better off not knowing.",
-                "I'm all you need for a calamity.",
-                "Everything shall bow before me! ...after you make this purchase.",
-                "It's clear that I'm helping you out, but uh.. what's in this for me? A house you say? I eat zombies for breakfast.",
-                "Can I jump? No, I don't have something called a 'spacebar'.",
-                "Got your nose, I needed one to replace mine.",
-                "What's a Terry?",
-                "Why do so many creatures carry around a weird looking blue doll? The world may never know.",
-                "Impending doom approaches. ...If you don't buy anything of course.",
-                "I've heard of a '3rd dimension', I wonder what that looks like.",
-                "Boy don't I look fabulous today.",
-                "You have fewer friends than I do eyes.",
-                "The ocean is a dangerous place, I wonder where Diver is?",
-                "Do you know what an Ee-arth is?",
-                "I can't even spell 'apotheosis', do you expect me to know what it is?",
-                "Where do monsters get their gold from? ...I don't have pockets you know.",
-                "Dogs are cool and all, but cats don't try to bite my brain.",
-                "Beware the green dragon... What's that face mean?",
-                "Where is this O-hi-o I keep hearing about.",
-                "I've told you 56 times already, I'm busy... Oh wait you want to buy something, I suppose I have time.",
-                "I've heard of a 'Soul of Souls' that only exists in 2015.",
-                "Adding EX after everything makes it way more difficult.",
-                "I think that all modern art looks great, especially the bloody stuff.",
-                "How many guides does it take to change a lightbulb? ... I don't know, how about you ask him.",
-                "Good thing I don't have a bed, I'd probably never leave it.",
-                "What's this about an update? Sounds rare.",
-                "If you need me I'll be slacking off somewhere.",
-                "What do you mean who is Fargo!",
-                "Have you seen the ech cat?",
-                "I don't understand music nowadays, I prefer some smooth jazz... or the dying screams of monsters.",
-                "Cthulhu's got nothing on me!",
-                "I heard of a rumor of infinite use boss summons. Makes me sick.."
-            };
+                "Savagery",
+                "StrongerProgression",
+                "DeathPerception",
+                "SelfSummon",
+                "BuyInBulk",
+                "Apple",
+                "JustMonika",
+                "Lucky",
+                "HamAndSwiss",
+                "Clothes",
+                "GoldSpending",
+                "ViolenceForViolence",
+                "DesertThemedBossesAreFunnyThoriumSpiritCalamityHolyCrapTrelamiumReference",
+                "BrotherlyLove",
+                "CalamityModReference",
+                "BowBeforeMe",
+                "ZombiesForBreakfast",
+                "SpacebarJump",
+                "GotYourNose",
+                "Terry",
+                "BlueDoll",
+                "ImpendingDoomApproaches",
+                "ThirdDimension",
+                "FabsolCalamity",
+                "FewerFriends",
+                "DivermanuelSamuel",
+                "Eearth",
+                "Apotheosis",
+                "NoPockets",
+                "CatPerson",
+                "GreenDragon",
+                "Ohayou",
+                "IAmAGreedyBastard",
+                "SoulOfSouls",
+                "EXBoxLive",
+                "ComedicCritiqueOnModernArt",
+                "HowManyGuidesDoesItTakeToOfferGoodAdvice",
+                "Bedless",
+                "UpdateSoonTm",
+                "Slacking",
+                "Fargo",
+                "Ech",
+                "SmoothJazzAndOtherFunBeatsToJamTo",
+                "Cthulhu",
+                "InfiniteUseBossSummons"
+            }.Select<string, LangEntry>(x => MutantLangEntry.NPCs("Mutant.Dialog." + x)).ToList();
 
             if (Fargowiltas.ModLoaded["FargowiltasSouls"])
             {
-                dialogue.AddWithCondition("Now that you've defeated the big guy, I'd say it's time to start collecting those materials!", NPC.downedMoonlord);
+                dialogue.AddWithCondition(MutantLangEntry.NPCs("Collecting"), NPC.downedMoonlord);
 
                 if ((bool)ModLoader.GetMod("FargowiltasSouls").Call("DownedMutant"))
                 {
-                    dialogue.Add("What's that? You want to fight me? ...sure, I guess.");
+                    dialogue.Add(MutantLangEntry.NPCs("RematchMe"));
                 }
                 else if ((bool)ModLoader.GetMod("FargowiltasSouls").Call("DownedFishronEX") || (bool)ModLoader.GetMod("FargowiltasSouls").Call("DownedAbom"))
                 {
-                    dialogue.Add("What's that? You want to fight me? ...maybe if I had a reason.");
+                    dialogue.Add(MutantLangEntry.NPCs("FightMe"));
                 }
             }
             else
             {
-                dialogue.Add("What's that? You want to fight me? ...you're not worthy you rat.");
+                dialogue.Add(MutantLangEntry.NPCs("BadRatsIsAPhysicsPuzzleGameWhereRatsFinallyGetTheirBloodyRevengeOnTheirNewPrisonersTheCats"));
             }
 
-            //dialogue.AddWithCondition("Why would you do this.", Fargowiltas.ModLoaded["CalamityMod"]);
-            //dialogue.AddWithCondition("I feel a great imbalance in this world.", Fargowiltas.ModLoaded["CalamityMod"] && Fargowiltas.ModLoaded["ThoriumMod"]);
-            //dialogue.AddWithCondition("A great choice, shame about that first desert boss thing though.", Fargowiltas.ModLoaded["ThoriumMod"]);
-            dialogue.AddWithCondition("A bit spooky tonight, isn't it.", Main.pumpkinMoon);
-            dialogue.AddWithCondition("I'd ask for a coat, but I don't think you have any my size.", Main.snowMoon);
-            dialogue.AddWithCondition("Weather seems odd today, wouldn't you agree?", Main.slimeRain);
-            dialogue.AddWithCondition("Lovely night, isn't it?", Main.bloodMoon);
-            dialogue.AddWithCondition("I hope the constant arguing I'm hearing isn't my fault.", Main.bloodMoon);
-            dialogue.AddWithCondition("I'd follow and help, but I'd much rather sit around right now.", !Main.dayTime);
+            //dialogue.AddWithCondition(MutantLangEntry.NPCs("CalamitiModNaTelefonie"), Fargowiltas.ModLoaded["CalamityMod"]);
+            //dialogue.AddWithCondition(MutantLangEntry.NPCs("DontMixContentModsItsKindOfIronicThoughBecauseSoulsIsAContentModAndSoulsDLCExists"), Fargowiltas.ModLoaded["CalamityMod"] && Fargowiltas.ModLoaded["ThoriumMod"]);
+            //dialogue.AddWithCondition(MutantLangEntry.NPCs("Trelamium2"), Fargowiltas.ModLoaded["ThoriumMod"]);
+            dialogue.AddWithCondition(MutantLangEntry.NPCs("PumpkinMoon"), Main.pumpkinMoon);
+            dialogue.AddWithCondition(MutantLangEntry.NPCs("Coat"), Main.snowMoon);
+            dialogue.AddWithCondition(MutantLangEntry.NPCs("SlimeRain"), Main.slimeRain);
+            dialogue.AddWithCondition(MutantLangEntry.NPCs("BloodMoon"), Main.bloodMoon);
+            dialogue.AddWithCondition(MutantLangEntry.NPCs("WhyDidRedigitAddAPeriodJokeIntoTheGame"), Main.bloodMoon);
+            dialogue.AddWithCondition(MutantLangEntry.NPCs("Sleepy"), !Main.dayTime);
 
             int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
             if (BirthdayParty.PartyIsUp)
@@ -331,21 +339,21 @@ namespace Fargowiltas.NPCs
             switch (shopNum)
             {
                 case 1:
-                    button = "Pre Hardmode";
+                    button = MutantLangEntry.NPCs("Mutant.Buttons.PreHM");
                     break;
 
                 case 2:
-                    button = "Hardmode";
+                    button = MutantLangEntry.NPCs("Mutant.Buttons.Hardmode");
                     break;
 
                 default:
-                    button = "Post Moon Lord";
+                    button = MutantLangEntry.NPCs("Mutant.Buttons.PostML");
                     break;
             }
 
             if (Main.hardMode)
             {
-                button2 = "Cycle Shop";
+                button2 = MutantLangEntry.NPCs("CycleShop");
             }
 
             if (NPC.downedMoonlord)
