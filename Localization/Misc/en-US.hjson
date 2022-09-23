@@ -49,5 +49,46 @@
             CelestialCreatures: "The celestial creatures begin their retreat!" # Celestial creatures are not invading!
             Rain: "The skies begin to clear!" # The rain has ended!
         }
+        
+        UI: {
+            Search: Search...
+            TextCaret: |
+            
+            StatSheet: {
+                MeleeDamage: "Melee Damage: {0}%"
+                MeleeCritical: "Melee Critical: {0}%"
+                MeleeSpeed: "Melee Speed: {0}%"
+                RangedDamage: "Ranged Damage: {0}%"
+                RangedCritical: "Ranged Critical: {0}%"
+                MagicDamage: "Magic Damage: {0}%"
+                MagicCritical: "Magic Critical: {0}%"
+                ManaCostReduction: "Mana Cost Reduction: {0}%"
+                SummonDamage: "Summon Damage: {0}%"
+                SummonCritical: "Summon Critical: {0}%"
+                MaxMinions: "Max Minions: {0}"
+                MaxSentries: "Max Sentries: {0}"
+                
+                ArmorPenetration: "Armor Penetration: {0}"
+                Aggro: "Aggro: {0}"
+                Life: "Life: {0}"
+                LifeRegen: "Life Regen: {0}/sec"
+                Mana: "Mana: {0}"
+                ManaRegen: "Mana Regen: {0}/sec"
+                Defense: "Defense: {0}"
+                DamageReduction: "Damage Reduction: {0}%"
+                Luck: "Luck: {0}"
+                FishingQuests: "Fishing Quests: {0}"
+                BattleCry: "Battle Cry: {0}"
+                BattleCryBattle: Battle
+                BattleCryCalming: Calming
+                BattleCryNone: None
+                MaxSpeed: "Max Speed: {0}%"
+                
+                WingTime: "Wing Time: {0} sec"
+                WingMaxSpeed: "Wing Max Speed: {0} mph"
+                WindAscentModifier: "Wing Ascent Modifier: {0}%"
+                WingCanHover: "Wing Can Hover: {0}"
+            }
+        }
     }
 }

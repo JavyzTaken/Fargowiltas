@@ -6,13 +6,12 @@ using Terraria.UI;
 using Terraria.GameInput;
 using Terraria.GameContent.UI.Elements;
 using System.Reflection;
+using Terraria.Localization;
 
 namespace Fargowiltas.UI
 {
     public class UISearchBar : UIElement
     {
-        public const string HintText = "Search...";
-
         public bool IsEmpty => string.IsNullOrEmpty(Input);
 
         public UIPanel BackPanel;
@@ -88,7 +87,7 @@ namespace Fargowiltas.UI
 
             if (string.IsNullOrEmpty(displayText) && !Focused)
             {
-                Utils.DrawBorderString(spriteBatch, HintText, position, Color.DarkGray);
+                Utils.DrawBorderString(spriteBatch, Language.GetTextValue("Mods.Fargowiltas.UI.Search"), position, Color.DarkGray);
             }
 
             if (Focused && ++CursorBlinkTimer >= 20)
@@ -99,7 +98,7 @@ namespace Fargowiltas.UI
 
             if (Focused && ShowCursorBlink)
             {
-                displayText += "|";
+                displayText += Language.GetTextValue("Mods.Fargowiltas.UI.TextCaret");
             }
 
             Utils.DrawBorderString(spriteBatch, displayText, position, Color.White);

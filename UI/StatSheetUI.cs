@@ -1,10 +1,12 @@
 ﻿using Fargowiltas.Items.Misc;
 using Microsoft.Xna.Framework;
 using System;
+using System.Globalization;
 using System.Linq;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.UI;
 
@@ -75,42 +77,55 @@ namespace Fargowiltas.UI
             double Damage(DamageClass damageClass) => Math.Round(player.GetTotalDamage(damageClass).Additive * player.GetTotalDamage(damageClass).Multiplicative * 100 - 100);
             int Crit(DamageClass damageClass) => (int)player.GetTotalCritChance(damageClass);
 
-            AddStat($"Melee Damage: {Damage(DamageClass.Melee)}%", ItemID.CopperBroadsword);
-            AddStat($"Melee Critical: {Crit(DamageClass.Melee)}%", ItemID.CopperBroadsword);
-            AddStat($"Melee Speed: {(int)(1f / player.GetAttackSpeed(DamageClass.Melee) * 100)}%", ItemID.CopperBroadsword);
-            AddStat($"Ranged Damage: {Damage(DamageClass.Ranged)}%", ItemID.CopperBow);
-            AddStat($"Ranged Critical: {Crit(DamageClass.Ranged)}%", ItemID.CopperBow);
-            AddStat($"Magic Damage: {Damage(DamageClass.Magic)}%", ItemID.WandofSparking);
-            AddStat($"Magic Critical: {Crit(DamageClass.Magic)}%", ItemID.WandofSparking);
-            AddStat($"Mana Cost Reduction: {Math.Round((1.0 - player.manaCost) * 100)}%", ItemID.WandofSparking);
-            AddStat($"Summon Damage: {Damage(DamageClass.Summon)}%", ItemID.SlimeStaff);
+            AddStatFromFargoKey("MeleeDamage", Damage(DamageClass.Melee), ItemID.CopperBroadsword);
+            AddStatFromFargoKey("MeleeCritical", Crit(DamageClass.Melee), ItemID.CopperBroadsword);
+            AddStatFromFargoKey("MeleeSpeed", (int)(1f / player.GetAttackSpeed(DamageClass.Melee) * 100), ItemID.CopperBroadsword);
+            AddStatFromFargoKey("RangedDamage", Damage(DamageClass.Ranged), ItemID.CopperBow);
+            AddStatFromFargoKey("RangedCritical", Crit(DamageClass.Ranged), ItemID.CopperBow);
+            AddStatFromFargoKey("MagicDamage", Damage(DamageClass.Magic), ItemID.WandofSparking);
+            AddStatFromFargoKey("MagicCritical", Crit(DamageClass.Magic), ItemID.WandofSparking);
+            AddStatFromFargoKey("ManaCostReduction", Math.Round((1.0 - player.manaCost) * 100), ItemID.WandofSparking);
+            AddStatFromFargoKey("SummonDamage", Damage(DamageClass.Summon), ItemID.SlimeStaff);
             if (Fargowiltas.ModLoaded["FargowiltasSouls"])
-                AddStat($"Summon Critical: {(int)ModLoader.GetMod("FargowiltasSouls").Call("GetSummonCrit")}%", ItemID.SlimeStaff);
+                AddStatFromFargoKey("SummonCritical", (int)ModLoader.GetMod("FargowiltasSouls").Call("GetSummonCrit"), ItemID.SlimeStaff);
             else
                 AddStat("");
-            AddStat($"Max Minions: {player.maxMinions}", ItemID.SlimeStaff);
-            AddStat($"Max Sentries: {player.maxTurrets}", ItemID.SlimeStaff);
+            AddStatFromFargoKey("MaxMinions", player.maxMinions, ItemID.SlimeStaff);
+            AddStatFromFargoKey("MaxSentries", player.maxTurrets, ItemID.SlimeStaff);
 
-            AddStat($"Armor Penetration: {player.GetArmorPenetration(DamageClass.Generic)}", ItemID.SharkToothNecklace);
-            AddStat($"Aggro: {player.aggro}", ItemID.FleshKnuckles);
+            AddStatFromFargoKey("ArmorPenetration", player.GetArmorPenetration(DamageClass.Generic), ItemID.SharkToothNecklace);
+            AddStatFromFargoKey("Aggro", player.aggro, ItemID.FleshKnuckles);
 
 
-            AddStat($"Life: {player.statLifeMax2}", ItemID.LifeCrystal);
-            AddStat($"Life Regen: {player.lifeRegen / 2}/sec", ItemID.BandofRegeneration);
-            AddStat($"Mana: {player.statManaMax2}", ItemID.ManaCrystal);
-            AddStat($"Mana Regen: {player.manaRegen / 2}/sec", ItemID.ManaCrystal);
-            AddStat($"Defense: {player.statDefense}", ItemID.CobaltShield);
-            AddStat($"Damage Reduction: {Math.Round(player.endurance * 100)}%", ItemID.WormScarf);
-            AddStat($"Luck: {Math.Round(player.luck, 2)}", ItemID.Torch);
-            AddStat($"Fishing Quests: {player.anglerQuestsFinished}", ItemID.AnglerEarring);
-            AddStat($"Battle Cry: {(modPlayer.BattleCry ? "[c/ff0000:Battle]" : (modPlayer.CalmingCry ? "[c/00ffff:Calming]" : "None"))}", ModContent.ItemType<BattleCry>());
-            AddStat($"Max Speed: {(int)((player.accRunSpeed + player.maxRunSpeed) / 2f * player.moveSpeed * 6)} mph", ItemID.HermesBoots);
+            string RenderBattleCry()
+            {
+                string battle = Language.GetTextValue("Mods.Fargowiltas.UI.StatSheet.Battle");
+                string calming = Language.GetTextValue("Mods.Fargowiltas.UI.StatSheet.Calming");
+                string none = Language.GetTextValue("Mods.Fargowiltas.UI.StatSheet.None");
+                return modPlayer.BattleCry ? $"[c/ff0000:{battle}]" : modPlayer.CalmingCry ? $"[c/00ffff:{calming}]" : none;
+            }
+            AddStatFromFargoKey("Life", player.statLifeMax2, ItemID.LifeCrystal);
+            AddStatFromFargoKey("LifeRegen", player.lifeRegen / 2, ItemID.BandofRegeneration);
+            AddStatFromFargoKey("Mana", player.statManaMax2, ItemID.ManaCrystal);
+            AddStatFromFargoKey("ManaRegen", player.manaRegen / 2, ItemID.ManaCrystal);
+            AddStatFromFargoKey("Defense", player.statDefense, ItemID.CobaltShield);
+            AddStatFromFargoKey("DamageReduction", Math.Round(player.endurance * 100), ItemID.WormScarf);
+            AddStatFromFargoKey("Luck", Math.Round(player.luck, 2), ItemID.Torch);
+            AddStatFromFargoKey("FishingQuests", player.anglerQuestsFinished, ItemID.AnglerEarring);
+            AddStatFromFargoKey("BattleCry", RenderBattleCry(), ModContent.ItemType<BattleCry>());
+            AddStatFromFargoKey("MaxSpeed", (int)((player.accRunSpeed + player.maxRunSpeed) / 2f * player.moveSpeed * 6), ItemID.HermesBoots);
 
-            string RenderWingStat(double stat) => stat <= 0 ? "???" : stat.ToString();
-            AddStat(player.wingTimeMax / 60 > 60 || player.empressBrooch ? "Wing Time: Yes" : $"Wing Time: {RenderWingStat(Math.Round(player.wingTimeMax / 60.0, 2))} sec", ItemID.AngelWings);
-            AddStat($"Wing Max Speed: {RenderWingStat(Math.Round(modPlayer.StatSheetWingSpeed * 32 / 6.25))} mph", ItemID.AngelWings);
-            AddStat($"Wing Ascent Modifier: {RenderWingStat(Math.Round(modPlayer.StatSheetMaxAscentMultiplier * 100))}%", ItemID.AngelWings);
-            AddStat($"Wing Can Hover: {(modPlayer.CanHover == null ? "???" : modPlayer.CanHover)}", ItemID.AngelWings);
+            string RenderWingStat(double stat) => stat <= 0 ? "???" : stat.ToString(CultureInfo.InvariantCulture);
+            // TODO: ∞ instead of Yes? lol
+            AddStatFromFargoKey("WingTime", player.wingTimeMax / 60 > 60 || player.empressBrooch ? "Yes" : RenderWingStat(Math.Round(player.wingTimeMax / 60.0, 2)), ItemID.AngelWings);
+            AddStatFromFargoKey("WingMaxSpeed", RenderWingStat(Math.Round(modPlayer.StatSheetWingSpeed * 32 / 6.25)), ItemID.AngelWings);
+            AddStatFromFargoKey("WingAscentModifier", RenderWingStat(Math.Round(modPlayer.StatSheetMaxAscentMultiplier * 100)), ItemID.AngelWings);
+            AddStatFromFargoKey("WingCanHover", modPlayer.CanHover == null ? "???" : modPlayer.CanHover, ItemID.AngelWings);
+        }
+
+        public void AddStatFromFargoKey(string key, object stat, int item = -1)
+        {
+            AddStat(Language.GetTextValue("Mods.Fargowiltas.UI.StatSheet." + key, stat), item);
         }
 
         public void AddStat(string text, int item = -1)
