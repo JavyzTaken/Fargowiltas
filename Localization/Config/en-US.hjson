@@ -1,7 +1,11 @@
 ﻿{
     Mods.Fargowiltas: {
         Config: {
-            CanSpawn: Can Spawn
+            Mutant: "[i:Fargowiltas/MutantMask] Mutant Can Spawn"
+            Abom: "[i:Fargowiltas/AbominationnMask] Abominationn Can Spawn"
+            Devi: "[i:Fargowiltas/DevianttMask] Deviantt Can Spawn"
+            Lumber: "[i:Fargowiltas/LumberjackMask] LumberJack Can Spawn"
+            Squirrel: "[i:239] Mutant Can Spawn"
 
             TownNPCsHeader: Town NPCs
             CatchNPCs: "[i:267] Catch Town NPCs"

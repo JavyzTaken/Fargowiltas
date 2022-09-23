@@ -83,6 +83,7 @@ namespace Fargowiltas
             dialogueTracker = new DevianttDialogueTracker();
             dialogueTracker.AddVanillaDialogue();
 
+            // TODO: Localize keybinds when tML supports it!
             HomeKey = KeybindLoader.RegisterKeybind(this, "Quick Recall/Mirror", "Home");
             RodKey = KeybindLoader.RegisterKeybind(this, "Quick Rod of Discord", "E");
             CustomKey = KeybindLoader.RegisterKeybind(this, "Quick Use Custom (Bottom Left Inventory Slot)", "K");
@@ -106,12 +107,6 @@ namespace Fargowiltas
             {
                 ModLoaded.Add(mod, false);
             }
-
-            AddToggle("Mods.Fargowiltas.Config.Mutant", "{$Mods.Fargowiltas.NPCName.Mutant} {$Mods.Fargowiltas.Config.CanSpawn}", ModContent.ItemType<MutantMask>(), "ffffff");
-            AddToggle("Mods.Fargowiltas.Config.Abom", "{$Mods.Fargowiltas.NPCName.Abominationn} {$Mods.Fargowiltas.Config.CanSpawn}", ModContent.ItemType<AbominationnMask>(), "ffffff");
-            AddToggle("Mods.Fargowiltas.Config.Devi", "{$Mods.Fargowiltas.NPCName.Deviantt} {$Mods.Fargowiltas.Config.CanSpawn}", ModContent.ItemType<DevianttMask>(), "ffffff");
-            AddToggle("Mods.Fargowiltas.Config.Lumber", "{$Mods.Fargowiltas.NPCName.LumberJack} {$Mods.Fargowiltas.Config.CanSpawn}", ModContent.ItemType<LumberjackMask>(), "ffffff");
-            AddToggle("Mods.Fargowiltas.Config.Squirrel", "{$Mods.Fargowiltas.NPCName.Squirrel} {$Mods.Fargowiltas.Config.CanSpawn}", ItemID.TopHat, "ffffff");
 
             CaughtNPCItem.RegisterItems(this);
 
