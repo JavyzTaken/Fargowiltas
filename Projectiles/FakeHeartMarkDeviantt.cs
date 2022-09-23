@@ -8,11 +8,6 @@ namespace Fargowiltas.Projectiles
     {
         public override string Texture => "Fargowiltas/Projectiles/FakeHeartDeviantt";
 
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Fake Heart");
-        }
-
         public override void SetDefaults()
         {
             Projectile.width = 12;

@@ -9,11 +9,6 @@ namespace Fargowiltas.Projectiles.Explosives
 {
     public class HalfInstaProj : ModProjectile
     {
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Half Instavator");
-        }
-
         public override void SetDefaults()
         {
             Projectile.width = 20;

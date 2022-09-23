@@ -1,0 +1,43 @@
+﻿{
+    Mods.Fargowiltas: {
+        ProjectileName: {
+            # ./
+            DeathScythe: Abominationn Scythe
+            Explosion: Explosion
+            EyeProjectile: Eye
+            FakeHeart2Deviantt: Fake Heart
+            FakeHeartDeviantt: Fake Heart
+            FakeHeartMarkDeviantt: Fake Heart
+            LumberJaxe: LumberJaxe
+            MechEyeProjectile: Mech Eye
+            PhantasmalEyeProjectile: Phantasmal Eye
+            CorruptNuke: Corrupt Renewal
+            CorruptNukeSupreme: Corrupt Renewal Supreme
+            CrimsonNuke: Crimson Renewal
+            CrimsonNukeSupreme: Crimson Renewal Supreme
+            HallowNuke: Hallow Renewal
+            HallowNukeSupreme: Hallow Renewal Supreme
+            MushroomNuke: Mushroom Renewal
+            MushroomNukeSupreme: Mushroom Renewal Supreme
+            PurityNuke: Purity Renewal
+            PurityNukeSupreme: Purity Renewal Supreme
+            SpawnProj: Spawn
+            
+            # ./Explosives/
+            AltarExterminatorProj: Altar Exterminator
+            AutoHouseProj: Auto House
+            CityBuster: City Buster
+            DoubleObsInstaBridgeProj: Double Obsidian Instabridge
+            GraveBuster: Grave Buster
+            HalfInstaProj: Half Instavator
+            InstabridgeProj: Instabridge
+            InstaHouseVisual: Auto House
+            InstaProj: Instavator
+            InstatrackProj: Instatrack
+            LihzahrdInstactuationBombProj: Lihzahrd Instactuation Bomb
+            MiniInstabridgeProj: Mini Instabridge
+            ObsInstabridgeProj: Obsidian Instabridge
+            ShurikenProj: Shuriken
+        }
+    }
+}

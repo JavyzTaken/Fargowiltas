@@ -13,11 +13,6 @@ namespace Fargowiltas.Projectiles
             set => Projectile.ai[0] = value;
         }
 
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("MechEyeProjectile");
-        }
-
         public override void SetDefaults()
         {
             Projectile.width = 8;

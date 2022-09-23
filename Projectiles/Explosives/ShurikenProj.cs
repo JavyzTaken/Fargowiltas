@@ -8,11 +8,6 @@ namespace Fargowiltas.Projectiles.Explosives
 {
     public class ShurikenProj : ModProjectile
     {
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Shuriken");
-        }
-
         public override void SetDefaults()
         {
             Projectile.width = 11;

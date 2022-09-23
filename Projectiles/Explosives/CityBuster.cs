@@ -11,11 +11,6 @@ namespace Fargowiltas.Projectiles.Explosives
 {
     public class CityBuster : ModProjectile
     {
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("City Buster");
-        }
-
         public override void SetDefaults()
         {
             Projectile.width = 30;

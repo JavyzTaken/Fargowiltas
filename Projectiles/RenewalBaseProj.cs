@@ -24,11 +24,6 @@ namespace Fargowiltas.Projectiles
 
         public override string Texture => "Fargowiltas/Items/Renewals/" + name;
 
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault(name);
-        }
-
         public override void SetDefaults()
         {
             Projectile.width = 20;

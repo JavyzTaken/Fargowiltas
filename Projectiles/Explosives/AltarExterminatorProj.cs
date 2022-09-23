@@ -10,11 +10,6 @@ namespace Fargowiltas.Projectiles.Explosives
 {
     public class AltarExterminatorProj : ModProjectile
     {
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Altar Exterminator");
-        }
-
         public override void SetDefaults()
         {
             Projectile.width = 2;

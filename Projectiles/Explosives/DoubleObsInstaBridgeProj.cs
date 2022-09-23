@@ -9,11 +9,6 @@ namespace Fargowiltas.Projectiles.Explosives
 {
     public class DoubleObsInstaBridgeProj : ModProjectile
     {
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Double Obsidian Instabridge");
-        }
-
         public override void SetDefaults()
         {
             Projectile.width = 20;

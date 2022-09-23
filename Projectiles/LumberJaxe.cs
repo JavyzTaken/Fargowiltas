@@ -7,10 +7,6 @@ namespace Fargowiltas.Projectiles
 {
     public class LumberJaxe : ModProjectile
     {
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("LumberJaxe");
-        }
 
         public override void SetDefaults()
         {

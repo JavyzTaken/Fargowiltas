@@ -18,7 +18,6 @@ namespace Fargowiltas.Projectiles
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("PhantasmalEyeProjectile");
             ProjectileID.Sets.TrailCacheLength[Projectile.type] = 4;
             ProjectileID.Sets.TrailingMode[Projectile.type] = 2;
         }

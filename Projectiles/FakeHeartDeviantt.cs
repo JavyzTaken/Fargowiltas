@@ -9,11 +9,6 @@ namespace Fargowiltas.Projectiles
 {
     public class FakeHeartDeviantt : ModProjectile
     {
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Fake Heart");
-        }
-
         public override void SetDefaults()
         {
             Projectile.width = 12;

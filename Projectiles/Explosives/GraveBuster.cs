@@ -11,11 +11,6 @@ namespace Fargowiltas.Projectiles.Explosives
 {
     public class GraveBuster : ModProjectile
     {
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Grave Buster");
-        }
-
         public override void SetDefaults()
         {
             Projectile.width = 30;

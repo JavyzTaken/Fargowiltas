@@ -9,11 +9,6 @@ namespace Fargowiltas.Projectiles.Explosives
 {
     public class InstatrackProj : ModProjectile
     {
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Instatrack");
-        }
-
         public override void SetDefaults()
         {
             Projectile.width = 20;

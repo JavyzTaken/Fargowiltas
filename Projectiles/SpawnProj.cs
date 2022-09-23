@@ -9,11 +9,6 @@ namespace Fargowiltas.Projectiles
     {
         private readonly int[] bosses = new int[] { NPCID.KingSlime, NPCID.EyeofCthulhu, NPCID.EaterofWorldsHead, NPCID.BrainofCthulhu, NPCID.QueenBee, NPCID.Deerclops, NPCID.SkeletronHead, NPCID.TheDestroyer, NPCID.SkeletronPrime, NPCID.Retinazer, NPCID.Spazmatism, NPCID.Plantera, NPCID.Golem, NPCID.DukeFishron, NPCID.CultistBoss, NPCID.MoonLordCore, NPCID.QueenSlimeBoss, NPCID.HallowBoss };
 
-        public override void SetStaticDefaults()
-        {
-            DisplayName.SetDefault("Spawn");
-        }
-
         public override void SetDefaults()
         {
             Projectile.width = 2;
