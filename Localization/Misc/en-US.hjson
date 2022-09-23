@@ -5,5 +5,19 @@
             SiblingPylonNotNearSiblings: That pylon needs the mutated siblings to function.
             NearbySiblingPylonNotNearSiblings: The nearby pylon needs the mutated siblings to function.
         }
+        
+        # Game tips that appear during world loading and other menus.
+        GameTips: {
+            CityBusters: City Busters are an excellent way to hollow out a large area quickly.
+            GalacticReformers: Galactic Reformers may erase extremely large areas. Be careful around your base!
+            CaughtNPCs: If you want to carry around your NPCs, you may catch them with a bug net.
+            CrateCrafting: Crates may be crafted directly into their various potential drops.
+            BoomShurikens: The Boom Shuriken is a potent mining tool which scales alongside you. Don't overlook them!
+            Mutant: The Mutant sells items known for disturbing great beasts.
+            Abominationn: The Abominationn sells items capable of bringing about various events.
+            Deviantt: The Deviantt sells items which may attract even the rarest of foes.
+            Painter: The Painter is known for being scenic, consider moving him to different biomes for a fresh set of paintings!
+            GoblinArmy: Disturbing the cores within the evil wastes may attract goblins!
+        }
     }
 }
