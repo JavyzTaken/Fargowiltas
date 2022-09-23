@@ -45,7 +45,7 @@ namespace Fargowiltas
 
             if (update)
             {
-                string text = $"A new item has been unlocked in {seller}'s shop!";
+                string text = Language.GetTextValue("Mods.Fargowiltas.NPCs.NewItemUnlocked", seller);
                 if (Main.netMode == NetmodeID.SinglePlayer)
                 {
                     if (conditions)

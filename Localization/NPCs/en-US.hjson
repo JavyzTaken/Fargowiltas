@@ -118,5 +118,9 @@
                 HateNPC: *very angry squeak about {NPCName}*
             }
         }
+        
+        NPCs: {
+            NewItemUnlocked: "A new item has been unlocked in {0}'s shop!"
+        }
     }
 }
