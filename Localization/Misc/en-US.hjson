@@ -55,6 +55,8 @@
             TextCaret: |
             
             StatSheet: {
+                Name: Stat Sheet
+
                 MeleeDamage: "Melee Damage: {0}%"
                 MeleeCritical: "Melee Critical: {0}%"
                 MeleeSpeed: "Melee Speed: {0}%"
@@ -67,7 +69,7 @@
                 SummonCritical: "Summon Critical: {0}%"
                 MaxMinions: "Max Minions: {0}"
                 MaxSentries: "Max Sentries: {0}"
-                
+
                 ArmorPenetration: "Armor Penetration: {0}"
                 Aggro: "Aggro: {0}"
                 Life: "Life: {0}"
@@ -83,7 +85,7 @@
                 BattleCryCalming: Calming
                 BattleCryNone: None
                 MaxSpeed: "Max Speed: {0}%"
-                
+
                 WingTime: "Wing Time: {0} sec"
                 WingMaxSpeed: "Wing Max Speed: {0} mph"
                 WindAscentModifier: "Wing Ascent Modifier: {0}%"
