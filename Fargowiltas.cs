@@ -123,6 +123,40 @@ namespace Fargowiltas
             Terraria.On_Recipe.FindRecipes += FindRecipes_ElementalAssemblerGraveyardHack;
             Terraria.On_WorldGen.CountTileTypesInArea += CountTileTypesInArea_PurityTotemHack;
             Terraria.On_SceneMetrics.ExportTileCountsToMain += ExportTileCountsToMain_PurityTotemHack;
+            Terraria.On_Player.HasUnityPotion += OnHasUnityPotion;
+            Terraria.On_Player.TakeUnityPotion += OnTakeUnityPotion;
+        }
+
+        private static IEnumerable<Item> GetWormholes(Player self) =>
+            self.inventory
+                .Concat(self.bank.item)
+                .Concat(self.bank2.item)
+                .Where(x => x.type == ItemID.WormholePotion);
+
+        private static void OnTakeUnityPotion(Terraria.On_Player.orig_TakeUnityPotion orig, Player self)
+        {
+            var wormholes = GetWormholes(self).ToList();
+
+            if (
+                ModContent.GetInstance<FargoConfig>().UnlimitedPotionBuffsOn120
+                && wormholes.Select(x => x.stack).Sum() >= 30
+            )
+            {
+                return;
+            }
+
+            // Can't be empty as we're gated by HasUnityPotion
+            Item pot = wormholes.First();
+
+            pot.stack -= 1;
+
+            if (pot.stack <= 0)
+                pot.SetDefaults(0, false);
+        }
+
+        private static bool OnHasUnityPotion(Terraria.On_Player.orig_HasUnityPotion orig, Player self)
+        {
+            return GetWormholes(self).Select(x => x.stack).Sum() > 0;
         }
 
         private static void FindRecipes_ElementalAssemblerGraveyardHack(
